@@ -1,0 +1,10 @@
+[project]
+name = "ntusctp-sgjobdata"
+version = "0.1.0"
+dependencies = [
+  "pandas",
+  "numpy",
+  "matplotlib",
+  "seaborn",
+  "streamlit"
+]
