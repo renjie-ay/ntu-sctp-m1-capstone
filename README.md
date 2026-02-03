@@ -16,3 +16,7 @@ uv is a Python environment manager. To set up the environment, run the following
 ## How to Lock env and dependencies:
 1. create a pyproject.toml file
 2. run: ```uv lock```
+
+
+## Notes:
+LLM workflow tooks 1 hour 16 mins on the first try to run
