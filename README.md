@@ -10,8 +10,66 @@
     * ```-eda.ipynb```, file that generated the cleaned parquet dfs
     * ```-ed-ml.ipynb```, can ignore, first trial for generating skillslist
     * ```visualplayground.ipynb```, code for the visual to test out before putting in app.py
+    * ```analysis.ipynb```, comprehensive skills analysis dashboard with visualizations
 * ```app.py```, main source code for streamlit application hosting
     * run this in streamlit
+
+## Skills Analysis Dashboard (notebooks/analysis.ipynb)
+
+Comprehensive Jupyter notebook analyzing 2,053 unique skills across ~1M Singapore job postings (Oct 2022 - May 2024).
+
+### Analysis Sections
+
+1. **Skill Popularity Overview**
+   - Top 20 most in-demand skills and 20 least popular skills
+   - Distribution analysis showing skill demand concentration
+   - Cumulative demand curve (80% of demand concentrated in top ~300 skills)
+
+2. **Emerging & Declining Skills**
+   - Growth rate analysis comparing recent 3 months vs previous 3 months
+   - Top 20 fastest-growing and declining skills
+   - Timeline trends for top 10 skills over 19-month period
+
+3. **Skills vs Experience Level**
+   - Heatmap showing skill-experience requirement patterns for top 30 skills
+   - Box plots of experience distribution across top 15 skills
+   - Analysis of skills requiring highest/lowest experience barriers
+
+4. **High Premium Skills (Salary Analysis)**
+   - Top 25 highest-paying skills with average salaries
+   - Bubble chart: Salary vs Popularity vs Experience requirements
+   - High-value skills identification (high salary + low experience barrier)
+
+5. **Skills by Category**
+   - Top 10 skills for each of the top 6 job categories
+   - Stacked bar chart showing distribution of top skills across categories
+
+6. **Universal Skills (Cross-Category Analysis)**
+   - Skills appearing across most categories (transferable skills)
+   - Transferability score metric (category coverage × demand)
+   - Scatter plot: universality vs total demand
+
+7. **Skill Co-occurrence Network**
+   - Network graph showing which skills commonly appear together in job postings
+   - Identifies skill clusters and complementary skill sets
+   - Top 40 skills with 150 most common co-occurrence pairs
+
+8. **Comprehensive Dashboard Summary**
+   - Single-page overview combining all key insights
+   - Statistical summary with key findings and trends
+
+### Key Insights Generated
+
+- Market concentration metrics (top N skills accounting for X% of demand)
+- Fastest growing/declining skills with growth rates
+- Highest-paying skills with salary benchmarks
+- Most universal cross-industry transferable skills
+- High-value skills (high ROI for learning)
+- Skill combination patterns and clusters
+
+### Data Source
+
+Uses `data/cleaned-sgjobdata-withskills.parquet` as single source of truth (6.2M records, exploded by skills from ~1M unique jobs). Applies proper date parsing and category extraction without additional data cleaning.
 
 ## Data: data/cleaned-sgjobdata-exploded.parquet
 this is a list dataframe of job postings.
