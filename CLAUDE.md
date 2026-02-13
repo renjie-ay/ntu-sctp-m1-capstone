@@ -14,8 +14,8 @@ uv venv .venv --python 3.12
 source .venv/bin/activate
 uv sync   # installs from uv.lock; includes heavy deps: torch, sentence-transformers, thefuzz
 
-# Run the Streamlit app
-streamlit run app.py
+# Run the Streamlit app (from project root)
+streamlit run streamlit/app.py
 
 # Lock dependencies (maintainer only)
 uv lock
@@ -45,7 +45,7 @@ data/SGJobData.csv.xz (raw, compressed)
 
 ### Key Files
 
-- **app.py** — Streamlit entry point (stub; visualizations being ported from notebook)
+- **streamlit/app.py** — Streamlit entry point; see `streamlit.md` for module layout
 - **notebooks/sgjobdata-eda.ipynb** — Main notebook producing all parquet outputs
 - **notebooks/visualplayground.ipynb** — Visualization prototyping before app.py integration
 - **data/jobsandskills-skillsfuture-skills-framework-dataset.xlsx** — Government skills taxonomy
